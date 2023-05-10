@@ -1,13 +1,18 @@
 import csv
-# TODO оформить в тест, добавить ассерты и использовать универсальный путь
-with open('resources/eggs.csv', 'w') as csvfile:
-    csvwriter = csv.writer(csvfile, delimiter=',')
-    csvwriter.writerow(['Anna', 'Pavel', 'Peter'])
-    csvwriter.writerow(['Alex', 'Serj', 'Yana'])
+import os
 
-with open('resources/eggs.csv') as csvfile:
-    csvreader = csv.reader(csvfile)
-    for row in csvreader:
+# TODO оформить в тест, добавить ассерты и использовать универсальный путь
+def test_csv_file():
+    PROJECT_ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
+    resources_package = os.path.join(PROJECT_ROOT_PATH, 'resources', 'eggs.csv')
+    with open(resources_package, 'w') as csvfile:
+       csvwriter = csv.writer(csvfile, delimiter=',')
+       csvwriter.writerow(['Anna', 'Pavel', 'Peter'])
+       csvwriter.writerow(['Alex', 'Serj', 'Yana'])
+
+   with open(resources_package) as csvfile:
+      csvreader = csv.reader(csvfile)
+      for row in csvreader:
         print(row)
 
         import time
