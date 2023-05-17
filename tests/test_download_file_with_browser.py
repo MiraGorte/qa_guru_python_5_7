@@ -1,5 +1,4 @@
 import os
-
 from selene import browser
 from selenium import webdriver
 
@@ -8,7 +7,7 @@ PROJECT_ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 
 # TODO оформить в тест, добавить ассерты и использовать универсальный путь к tmp
 def test_download_file_with_browser():
-    resources_package = os.path.join(PROJECT_ROOT_PATH, 'resources')
+    resources_package = os.path.join(PROJECT_ROOT_PATH, '../resources')
     options = webdriver.ChromeOptions()
     prefs = {
         "download.default_directory": resources_package,

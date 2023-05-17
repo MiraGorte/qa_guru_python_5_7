@@ -6,7 +6,7 @@ import os.path
 # TODO оформить в тест, добавить ассерты и использовать универсальный путь
 def test_csv_file():
     PROJECT_ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
-    resources_package = os.path.join(PROJECT_ROOT_PATH, 'resources', 'eggs.csv')
+    resources_package = os.path.join(PROJECT_ROOT_PATH, '../resources', 'eggs.csv')
     with open(resources_package, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
         csvwriter.writerow(['Anna', 'Pavel', 'Peter'])
