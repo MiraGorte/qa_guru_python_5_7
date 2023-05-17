@@ -23,4 +23,3 @@ def test_csv_file():
 
         assert row1 == ['Anna', 'Pavel', 'Peter']
         assert row2 == ['Alex', 'Serj', 'Yana']
-
